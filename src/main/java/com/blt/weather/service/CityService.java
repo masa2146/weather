@@ -1,6 +1,6 @@
 package com.blt.weather.service;
 
-import com.blt.weather.RecordNotFoundException;
+import com.blt.weather.exception.RecordNotFoundException;
 import com.blt.weather.model.City;
 import com.blt.weather.repository.CityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +34,12 @@ public class CityService {
                 City newCity = city.get();
                 newCity.setCountry(entity.getCountry());
                 newCity.setName(entity.getName());
+                cityRepository.save(newCity);
                 return newCity;
             } else {
-                System.out.println("ENTITY: "+entity);
                 return cityRepository.save(entity);
             }
         } else {
-            System.out.println("ENTITY: "+entity);
             return cityRepository.save(entity);
         }
     }

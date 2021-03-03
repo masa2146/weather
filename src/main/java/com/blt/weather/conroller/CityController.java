@@ -1,6 +1,6 @@
 package com.blt.weather.conroller;
 
-import com.blt.weather.RecordNotFoundException;
+import com.blt.weather.exception.RecordNotFoundException;
 import com.blt.weather.model.City;
 import com.blt.weather.service.CityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +14,7 @@ import static com.blt.weather.util.APIConstant.*;
 /**
  * @author fatih
  */
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping(API_PREFIX + API_VERSION + API_CITY)
 public class CityController {

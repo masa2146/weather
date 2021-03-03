@@ -1,6 +1,4 @@
-package com.blt.weather;
-
-import java.util.function.Supplier;
+package com.blt.weather.exception;
 
 /**
  * @author fatih

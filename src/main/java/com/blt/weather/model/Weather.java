@@ -15,6 +15,7 @@ import java.util.Map;
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString
+@Data
 public class Weather implements Serializable {
 
     private static final long serialVersionUID = 3937462346144036240L;
@@ -45,8 +46,9 @@ public class Weather implements Serializable {
 
     @JsonProperty("coord")
     public void setCoord(Map<String, Object> coord) {
-        lon = (double) coord.get("lon");
-        lat = (double) coord.get("lat");
+
+        lon = ((Number) coord.get("lon")).doubleValue();
+        lat = ((Number) coord.get("lat")).doubleValue();
     }
 
     @ToString

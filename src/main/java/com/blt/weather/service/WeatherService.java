@@ -30,12 +30,13 @@ public class WeatherService {
                 .scheme("http")
                 .host(weatherUrl.getUrl())
                 .path("")
-                .query("q={keyword}&appid={appid}")
+                .query("q={keyword}&appid={appid}&units=metric")
                 .buildAndExpand(city, weatherUrl.getApiKey());
 
         String uri = uriComponents.toUriString();
         ResponseEntity<String> resp = restTemp.exchange(uri, HttpMethod.GET, null, String.class);
         ObjectMapper mapper = new ObjectMapper();
+        System.out.println(resp.getBody());
         return mapper.readValue(resp.getBody(), Weather.class);
     }
 }
