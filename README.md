@@ -23,7 +23,7 @@ Run on the **http://localhost:8081**
 for update
 
 ```json 
-{id: 5, "name":"Elazig","country":"Turkey"} 
+{"id": 5, "name":"Elazig","country":"Turkey"} 
 ```
 * http://localhost:8081/api/v1/city/{id} with DELETE method: Delete city by city id.
 * http://localhost:8081/api/v1/weather/{cityName} with GET method: Get city weather by city name.
